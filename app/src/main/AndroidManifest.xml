@@ -3,19 +3,23 @@
     package="com.example.android.multiscreenapp">
 
     <application
-        android:theme="@style/AppTheme"
-        android:supportsRtl="true"
-        android:label="@string/app_name"
-        android:icon="@mipmap/ic_launcher"
+        android:allowBackup="true"
         android:fullBackupContent="true"
-        android:allowBackup="true">
-
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MultiScreenApp">
+        <activity android:name=".PhrasesActivity" android:label="@string/category_phrases"/>
+        <activity android:name=".FamilyActivity" android:label="@string/category_family"/>
+        <activity android:name=".ColorsActivity" android:label="@string/category_colors"/>
+        <activity android:name=".NumbersActivity" android:label="@string/category_numbers"/>
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
+
 </manifest>
