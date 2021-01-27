@@ -31,21 +31,19 @@ public class NumbersActivity extends AppCompatActivity {
 
         LinearLayout rootView = findViewById(R.id.rootView);
 
-        TextView wordView = new TextView(this);
-        wordView.setText(words.get(0));
-        rootView.addView(wordView);
+        for (int index = 0; index < words.size(); index++){
+            TextView wordView = new TextView(this);
+            wordView.setText(words.get(index));
+            rootView.addView(wordView);
+        }
 
-        TextView wordView2 = new TextView(this);
-        wordView2.setText(words.get(1));
-        rootView.addView(wordView2);
-
-        TextView wordView3 = new TextView(this);
-        wordView3.setText(words.get(2));
-        rootView.addView(wordView3);
-
-        TextView wordView4 = new TextView(this);
-        wordView4.setText(words.get(3));
-        rootView.addView(wordView4);
+/*      int index = 0;
+        while(index < words.size()) {
+            TextView wordView = new TextView(this);
+            wordView.setText(words.get(index));
+            rootView.addView(wordView);
+            index++;
+       }
 
         /*Log.v("NumbersActivity", "Word at index 0: " + words.get(0));
         Log.v("NumbersActivity", "Word at index 1: " + words.get(1));
