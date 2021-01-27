@@ -22,6 +22,7 @@ public class NumbersActivity extends AppCompatActivity {
         words.add("three");
         words.add("four");
         words.add("five");
+
         words.add("six");
         words.add("seven");
         words.add("eight");
