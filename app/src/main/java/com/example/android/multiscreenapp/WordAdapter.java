@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -16,7 +17,6 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
         super(context, 0, words);
     }
-
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -33,6 +33,9 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
         TextView defaultTextView = listItemView.findViewById(R.id.default_text_view);
         defaultTextView.setText(currentWord.getDefaultTranslation());
+
+        ImageView imageIcon = listItemView.findViewById(R.id.image);
+        imageIcon.setImageResource(currentWord.getImageResourceID());
 
         return listItemView;
     }
