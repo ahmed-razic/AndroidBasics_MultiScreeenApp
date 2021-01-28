@@ -30,6 +30,5 @@ public class PhrasesActivity extends AppCompatActivity {
         WordAdapter adapter = new WordAdapter (this, words, R.color.category_phrases);
         ListView listView = findViewById(R.id.list);
         listView.setAdapter(adapter);
-
     }
 }

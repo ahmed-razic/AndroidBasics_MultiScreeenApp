@@ -29,7 +29,6 @@ public class NumbersActivity extends AppCompatActivity {
         WordAdapter adapter = new WordAdapter (this, words, R.color.category_numbers);
         ListView listView = findViewById(R.id.list);
         listView.setAdapter(adapter);
-
 /*      ArrayList<String> words = new ArrayList<String>();
         words.add("one");
         words.add("two");
