@@ -3,6 +3,7 @@ package com.example.android.multiscreenapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 
@@ -22,5 +23,9 @@ public class ColorsActivity extends AppCompatActivity {
         words.add(new Word("gray", "ṭopoppi"));
         words.add(new Word("black", "kululli"));
         words.add(new Word("white", "kelelli"));
+
+        WordAdapter adapter = new WordAdapter (this, words);
+        ListView listView = findViewById(R.id.list);
+        listView.setAdapter(adapter);
     }
 }

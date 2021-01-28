@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 
@@ -26,5 +27,9 @@ public class FamilyActivity extends AppCompatActivity {
         words.add(new Word("younger sister", "kolliti"));
         words.add(new Word("grandmother ", "ama"));
         words.add(new Word("grandfather", "paapa"));
+
+        WordAdapter adapter = new WordAdapter (this, words);
+        ListView listView = findViewById(R.id.list);
+        listView.setAdapter(adapter);
     }
 }

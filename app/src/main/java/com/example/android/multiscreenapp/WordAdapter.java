@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class WordAdapter extends ArrayAdapter {
+public class WordAdapter extends ArrayAdapter<Word> {
 
     public WordAdapter(Activity context, ArrayList<Word> words) {
 
@@ -26,7 +26,7 @@ public class WordAdapter extends ArrayAdapter {
                     R.layout.list_item, parent, false);
         }
 
-        Word currentWord = (Word) getItem(position);
+        Word currentWord = getItem(position);
 
         TextView miwokTextView = listItemView.findViewById(R.id.miwok_text_view);
         miwokTextView.setText(currentWord.getMiwokTranslation());
