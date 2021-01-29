@@ -2,12 +2,15 @@ package com.example.android.multiscreenapp;
 
 import android.app.Activity;
 import android.content.Context;
+import android.media.MediaPlayer;
+import android.os.strictmode.ImplicitDirectBootViolation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import androidx.core.content.ContextCompat;
@@ -17,6 +20,7 @@ import java.util.ArrayList;
 public class WordAdapter extends ArrayAdapter<Word> {
 
     private final int mColorResourceId;
+    private MediaPlayer mPlayer;
 
     public WordAdapter(Activity context, ArrayList<Word> words, int colorResourceId ) {
         super(context, 0, words);
@@ -41,7 +45,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
         ImageView imageView = listItemView.findViewById(R.id.image);
         if(currentWord.hasImage()) {
-            imageView.setImageResource(currentWord.getImageResourceID());
+            imageView.setImageResource(currentWord.getImageResourceId());
             imageView.setVisibility(View.VISIBLE);
         } else {
             imageView.setVisibility(View.GONE);
@@ -50,6 +54,15 @@ public class WordAdapter extends ArrayAdapter<Word> {
         View textContainer = listItemView.findViewById(R.id.text_container);
         int color = ContextCompat.getColor(getContext(), mColorResourceId);
         textContainer.setBackgroundColor(color);
+
+
+        listItemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mPlayer = MediaPlayer.create(getContext(), currentWord.getAudioResourceId());
+                mPlayer.start();
+            }
+        });
 
         return listItemView;
     }
