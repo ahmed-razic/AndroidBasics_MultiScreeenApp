@@ -20,7 +20,15 @@ public class Word {
         mAudioResourceId = audioResourceId;
     }
 
-
+    @Override
+    public String toString() {
+        return "Word{" +
+                "mMiwokTranslation='" + mMiwokTranslation + '\'' +
+                ", mDefaultTranslation='" + mDefaultTranslation + '\'' +
+                ", mAudioResourceId=" + mAudioResourceId +
+                ", mImageResourceId=" + mImageResourceId +
+                '}';
+    }
 
     public String getMiwokTranslation() {
         return mMiwokTranslation;
