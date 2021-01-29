@@ -20,7 +20,6 @@ import java.util.ArrayList;
 public class WordAdapter extends ArrayAdapter<Word> {
 
     private final int mColorResourceId;
-    private MediaPlayer mPlayer;
 
     public WordAdapter(Activity context, ArrayList<Word> words, int colorResourceId ) {
         super(context, 0, words);
@@ -55,14 +54,6 @@ public class WordAdapter extends ArrayAdapter<Word> {
         int color = ContextCompat.getColor(getContext(), mColorResourceId);
         textContainer.setBackgroundColor(color);
 
-
-        listItemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mPlayer = MediaPlayer.create(getContext(), currentWord.getAudioResourceId());
-                mPlayer.start();
-            }
-        });
 
         return listItemView;
     }
