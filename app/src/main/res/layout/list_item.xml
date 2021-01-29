@@ -46,6 +46,5 @@
                 android:textSize="18sp"
                 tools:text="one" />
         </LinearLayout>
-
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
